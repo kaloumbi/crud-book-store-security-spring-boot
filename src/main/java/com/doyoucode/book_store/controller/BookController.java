@@ -42,7 +42,6 @@ public class BookController {
 
         List<BookDto> bookDtoList = bookService.getAllBooks();
 
-
         return new ResponseEntity<>(bookDtoList, HttpStatus.OK);
     }
 

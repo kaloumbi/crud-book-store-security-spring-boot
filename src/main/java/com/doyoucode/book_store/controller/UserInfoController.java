@@ -23,4 +23,11 @@ public class UserInfoController {
         UserInfoDto userInfoDto1 = userInfoService.createUser(userInfoDto);
         return new ResponseEntity<>("User " + userInfoDto1.userName() + " Created Successfully !", HttpStatus.CREATED);
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> getUserInfo(@RequestBody UserInfoDto userInfoDto){
+
+        String userInfoDtoLogged = userInfoService.getUserInfo(userInfoDto);
+        return new ResponseEntity<>(userInfoDtoLogged, HttpStatus.OK);
+    }
 }
